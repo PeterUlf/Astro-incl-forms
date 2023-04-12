@@ -1,0 +1,41 @@
+---
+const { variant, size, linkTo, text } = Astro.props;
+---
+
+<a href={linkTo} class={variant + " " + size} +> {text}</a>
+
+<style>
+  .link {
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+  .link:hover {
+    background-color: white;
+    color: green;
+  }
+
+  .menu {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+  .menu:hover {
+    background-color: white;
+    color: red;
+  }
+
+  .primary {
+    background-color: green;
+    color: white;
+  }
+  .medium {
+    font-size: 1rem;
+    padding: 0.3rem;
+    width: 100px;
+    justify-self: end;
+    border-radius: 10px;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import Testimonial from "../components/Testimonial.astro";
+const url =
+  "https://ciaqrilyjthqvwujzgne.supabase.co/rest/v1/T_testimonials?accepted=eq.true";
+
+const api =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpYXFyaWx5anRocXZ3dWp6Z25lIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk0MDU1OTcsImV4cCI6MTk5NDk4MTU5N30.HvOlbfgbMwKnd2Dh6FMgSwgo33XsZM1nwvQXD-QrgUM";
+
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+console.log(data);
+---
+
+<h2>Kundeudsagn</h2>
+<div id="testimonials">
+  {
+    data.map((testimonial) => {
+      return <Testimonial data={testimonial} />;
+    })
+  }
+</div>
+
+<style>
+  #testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+
+    gap: 20px;
+    margin-top: 30px;
+  }
+  h2 {
+    margin-top: 2rem;
+  }
+</style>

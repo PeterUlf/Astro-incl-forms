@@ -1,15 +1,16 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import Testimonials from "../components/Testimonials.astro";
+import AddForm from "../components/AddForm.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Forside">
+  <p>
+    Denne tekst kommer kun på forsiden. Lorem ipsum dolor, sit amet consectetur
+    adipisicing elit. Velit repellendus quibusdam qui ipsa quae nulla ea
+    deleniti eligendi recusandae asperiores nostrum sed mollitia iste officia
+    aliquid, ratione fugiat! Facilis, eveniet?
+  </p>
+  <Testimonials />
+  <AddForm />
+</MainLayout>
